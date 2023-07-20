@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://miner13.iptime.org:3306/back
+    username: root
+    password: miner13!#
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+      show_sql: true
+
+#spring:
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console  # H2 Console의 Path
+  #datasource:
+    #    driver-class-name: org.h2.Driver
+    #    url: jdbc:h2:~/java/vue-boot-backend/local.mv.db  # H2 접속 정보
+    #    username: sa  # H2 접속 시 입력할 username 정보
+    #    password:  # H2 접속 시 입력할 password 정보
