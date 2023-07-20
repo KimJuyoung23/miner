@@ -9,12 +9,6 @@ import java.time.LocalDateTime;
 @SpringBootTest
 class VueBootBackendApplicationTests {
 
-    @Autowired
-    private BoardRepository boardRepository;
 
-    @Test
-    void testJpa() {
-        Board.builder();
-    }
 
 }
