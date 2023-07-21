@@ -26,7 +26,7 @@ public class BoardRestController {
 
     @GetMapping("/")
     public List<Board> searchBoardOne() {
-        return boardService.searchBoardOne("y"); // n 으로 변경해서 사용
+        return boardService.searchBoardOne("n"); // n 으로 변경해서 사용
     }
 
     @PostMapping("/")
