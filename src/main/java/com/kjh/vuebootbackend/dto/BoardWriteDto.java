@@ -8,12 +8,12 @@ import lombok.Data;
 @Builder
 public class BoardWriteDto {
     private String title;
-    private String content;
+    private String bContent;
 
     public Board toEntity(){
         return Board.builder()
                 .title(title)
-                .content(content)
+                .bContent(bContent)
                 .build();
     }
 

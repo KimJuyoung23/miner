@@ -18,9 +18,9 @@ public class BoardModifyDto {
 
     public Board toEntity(){
         return Board.builder()
-                .no(bNo)
+                .bNo(bNo)
                 .title(title)
-                .content(bContent)
+                .bContent(bContent)
                 .build();
     }
 }
