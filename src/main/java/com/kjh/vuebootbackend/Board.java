@@ -16,14 +16,14 @@ import org.hibernate.annotations.DynamicInsert;
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "no")
-    private Long no;
+    @Column(name = "b_no")
+    private Long bNo;
 
     @Column(name = "title",length = 50,nullable = false)
     private String title;
 
-    @Column(columnDefinition = "TEXT",nullable = false)
-    private String content;
+    @Column(name = "b_content", columnDefinition = "TEXT",nullable = false)
+    private String bContent;
 
     @Column(name = "delete_yn")
     @ColumnDefault("'n'") //디폴트 N으로 설정되게
@@ -56,10 +56,10 @@ public class Board {
 //    private LocalDateTime lastModifiedDate;
 
     @Builder
-    public Board(Long no, String title, String content, String deleteYn) {
-        this.no = no;
+    public Board(Long bNo, String title, String bContent, String deleteYn) {
+        this.bNo = bNo;
         this.title = title;
-        this.content = content;
+        this.bContent = bContent;
         this.deleteYn = deleteYn;
     }
 }

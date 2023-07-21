@@ -9,15 +9,15 @@ import lombok.Data;
 public class BoardDeleteDto {
 
     private String deleteYn;
-    private Long no;
+    private Long bNo;
     private String title; // 없어야함
-    private String content; // 없어야함
+    private String bContent; // 없어야함
 
     public Board toEntity(){
         return Board.builder()
-                .no(no)
+                .no(bNo)
                 .title(title) // 없어야함
-                .content(content) // 없어야함
+                .content(bContent) // 없어야함
                 .deleteYn("y")
                 .build();
     }

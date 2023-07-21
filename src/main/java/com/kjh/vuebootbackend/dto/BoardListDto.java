@@ -12,14 +12,14 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class BoardListDto {
 
-    private Long no;
+    private Long bNo;
     private String title;
-    private String content;
+    private String bContent;
 
     public BoardListDto(Board board) {
-        this.no = no;
+        this.bNo = bNo;
         this.title = title;
-        this.content = content;
+        this.bContent = bContent;
     }
 
 

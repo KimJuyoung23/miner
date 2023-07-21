@@ -10,17 +10,17 @@ import java.time.LocalDateTime;
 @Builder
 public class BoardModifyDto {
 
-    private Long no;
+    private Long bNo;
     private String title;
-    private String content;
+    private String bContent;
 //    private String lastModifiedAt;
 //    private LocalDateTime lastModifiedDate;
 
     public Board toEntity(){
         return Board.builder()
-                .no(no)
+                .no(bNo)
                 .title(title)
-                .content(content)
+                .content(bContent)
                 .build();
     }
 }

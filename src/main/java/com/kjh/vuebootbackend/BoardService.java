@@ -33,12 +33,12 @@ public class BoardService {
 
 
     @Transactional
-    public void deleteBoard(Long no) {
-        Board board = boardRepository.findById(no).orElseThrow();
+    public void deleteBoard(Long bNo) {
+        Board board = boardRepository.findById(bNo).orElseThrow();
         BoardDeleteDto boardDeleteDto = BoardDeleteDto.builder()
-                .no(no)
+                .bNo(bNo)
                 .title(board.getTitle())
-                .content(board.getContent())
+                .bContent(board.getBContent())
                 .deleteYn("y")
                 .build();
         boardRepository.save(boardDeleteDto.toEntity());
