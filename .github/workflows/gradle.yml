@@ -114,16 +114,16 @@ jobs:
 #           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_ADDR }} "sudo fuser -k 8080/tcp"
 #           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_ADDR }} "
       
-      # 내가 만든 서버 스크립트 실행
-      - name: Execute Server Init Script
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_ADDR }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          port: ${{ secrets.SERVER_PORT }}
-          script_stop: true
-          script: | 
-            sh action_deploy.sh
+#       # 내가 만든 서버 스크립트 실행
+#       - name: Execute Server Init Script
+#         uses: appleboy/ssh-action@master
+#         with:
+#           host: ${{ secrets.SSH_ADDR }}
+#           username: ${{ secrets.SSH_USER }}
+#           password: ${{ secrets.SERVER_PASSWORD }}
+#           port: ${{ secrets.SERVER_PORT }}
+#           script_stop: true
+#           script: | 
+#             sh action_deploy.sh
 
 
