@@ -29,6 +29,10 @@ public class Board {
     @ColumnDefault("'n'") //디폴트 N으로 설정되게
     private String deleteYn;
 
+    @Column(name = "views")
+    @ColumnDefault("0")
+    private Long views;
+
 //    @NonNull
 //    @Column(name = "b_content",columnDefinition = "TEXT")
 //    private String bContent;
