@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @Table(name = "board")
 @Entity
 @DynamicInsert
-public class Board {
+public class Board extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "b_no")
@@ -44,20 +44,20 @@ public class Board {
     private Long thumbsUp;
 
     @CreatedBy
-    @Column(name = "CREATED_AT")
+    @Column(name = "CREATED_AT", updatable = false, nullable = false)
     private String createdAt;
 
-    @CreatedDate
-    @Column(name = "CREATED_DATE", updatable = false)
-    private LocalDateTime createdDate;
+//    @CreatedDate
+//    @Column(name = "CREATED_DATE", updatable = false, nullable = false)
+//    private LocalDateTime createdDate;
 
     @LastModifiedBy
     @Column(name = "LAST_MODIFIED_AT")
     private String lastModifiedAt;
 
-    @LastModifiedDate
-    @Column(name = "LAST_MODIFIED_DATE")
-    private LocalDateTime lastModifiedDate;
+//    @LastModifiedDate
+//    @Column(name = "LAST_MODIFIED_DATE")
+//    private LocalDateTime lastModifiedDate;
 
     @Builder
     public Board(Long bNo, String title, String bContent, String deleteYn) {
