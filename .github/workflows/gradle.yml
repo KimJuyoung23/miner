@@ -55,8 +55,8 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
-            docker stop $(docker ps -f "name=miner" -q) 
-            docker rm $(docker ps -f "name=miner" -q) 
+            docker stop $(docker ps -a -f "name=miner" -q) 
+            docker rm $(docker ps -a -f "name=miner" -q) 
             docker pull kimjuyoung0923/miner
             docker run -d -p 8080:8080 --name miner kimjuyoung0923/miner
 
