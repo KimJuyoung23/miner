@@ -67,6 +67,12 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
+          rm: true
+          source: ${{ secrets.SOURCE_PATH }}
+          target: ${{ secrets.DIST_PATH }}
+          ## 작업에 사용했던 dist 디렉토리를 경로상에서 제거
+          strip_components: 1
+
 
 #       - name: Execute remote commands
 #         run: |
@@ -77,11 +83,12 @@ jobs:
       - name: Execute Server Init Script
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
+          host: ${{ secrets.SSH_ADDR }}
+          username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           script_stop: true
           script: | 
             sh action_deploy.sh
+
 
