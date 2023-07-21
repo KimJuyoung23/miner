@@ -5,6 +5,12 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
 
 
 @Getter
@@ -33,31 +39,25 @@ public class Board {
     @ColumnDefault("0")
     private Long views;
 
-//    @NonNull
-//    @Column(name = "b_content",columnDefinition = "TEXT")
-//    private String bContent;
-//
-//    @Column(name = "VIEWS")
-//    private Integer views;
-//
-//    @Column(name = "THUMBS_UP")
-//    private Integer thumbsUp;
-//
-//    @CreatedBy
-//    @Column(name = "CREATED_AT")
-//    private String createdAt;
-//
-//    @CreatedDate
-//    @Column(name = "CREATED_DATE", updatable = false)
-//    private LocalDateTime createdDate;
-//
-//    @LastModifiedBy
-//    @Column(name = "LAST_MODIFIED_AT")
-//    private String lastModifiedAt;
-//
-//    @LastModifiedDate
-//    @Column(name = "LAST_MODIFIED_DATE")
-//    private LocalDateTime lastModifiedDate;
+    @Column(name = "thumbs_up")
+    @ColumnDefault("0")
+    private Long thumbsUp;
+
+    @CreatedBy
+    @Column(name = "CREATED_AT")
+    private String createdAt;
+
+    @CreatedDate
+    @Column(name = "CREATED_DATE", updatable = false)
+    private LocalDateTime createdDate;
+
+    @LastModifiedBy
+    @Column(name = "LAST_MODIFIED_AT")
+    private String lastModifiedAt;
+
+    @LastModifiedDate
+    @Column(name = "LAST_MODIFIED_DATE")
+    private LocalDateTime lastModifiedDate;
 
     @Builder
     public Board(Long bNo, String title, String bContent, String deleteYn) {
