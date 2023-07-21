@@ -44,7 +44,8 @@ public class Board extends BaseTimeEntity{
     private Long thumbsUp;
 
     @CreatedBy
-    @Column(name = "CREATED_AT", updatable = false, nullable = false)
+    @Column(name = "CREATED_AT", updatable = false)
+//    @Column(name = "CREATED_AT", updatable = false, nullable = false)
     private String createdAt;
 
 //    @CreatedDate
