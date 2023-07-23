@@ -41,8 +41,8 @@ public class BoardRestController {
     }
 
 
-    @PostMapping("/delete/{no}")
-    public void deleteBoard(@PathVariable Long no){
-        boardService.deleteBoard(no);
+    @PostMapping("/delete/{bNo}")
+    public void deleteBoard(@PathVariable Long bNo){
+        boardService.deleteBoard(bNo);
     }
 }
