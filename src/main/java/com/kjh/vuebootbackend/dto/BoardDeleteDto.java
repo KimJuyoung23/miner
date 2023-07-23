@@ -16,8 +16,6 @@ public class BoardDeleteDto {
     public Board toEntity(){
         return Board.builder()
                 .bNo(bNo)
-                .title(title) // 없어야함
-                .bContent(bContent) // 없어야함
                 .deleteYn("y")
                 .build();
     }
