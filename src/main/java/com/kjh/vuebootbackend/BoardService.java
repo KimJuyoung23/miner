@@ -37,8 +37,6 @@ public class BoardService {
         Board board = boardRepository.findById(bNo).orElseThrow();
         BoardDeleteDto boardDeleteDto = BoardDeleteDto.builder()
                 .bNo(bNo)
-                .title(board.getTitle())
-                .bContent(board.getBContent())
                 .deleteYn("y")
                 .build();
         boardRepository.save(boardDeleteDto.toEntity());
