@@ -21,7 +21,7 @@ public class BoardService {
     public List<Board> searchBoardOne(String deleteYn){
         return boardRepository.findByDeleteYn(deleteYn);
     }
-    @Transactional
+    @Transactional // 선언적 트랙잭. 연산이 원자성이 보장되고, 고립된다.
     public Board saveBoard(BoardWriteDto boardWriteDto) {
         return boardRepository.save(boardWriteDto.toEntity());
     }

@@ -32,7 +32,7 @@ public class Board extends BaseTimeEntity{
     private String bContent;
 
     @Column(name = "delete_yn")
-    @ColumnDefault("'n'") //디폴트 N으로 설정되게
+    @ColumnDefault("'n'") //디폴트 N으로 설정. Post 에는 null 값으로 들어감. DB 저장되고 'N' 으로 변경되는 거 같음.
     private String deleteYn;
 
     @Column(name = "views")
