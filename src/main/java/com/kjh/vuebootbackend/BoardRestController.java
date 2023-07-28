@@ -12,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/board")
 public class BoardRestController {
-    @Autowired
+//    @Autowired
     private final BoardService boardService;
 
     @GetMapping("/all")
@@ -31,14 +31,14 @@ public class BoardRestController {
         return boardService.saveBoard(boardWriteDto);
     }
 
-    @PutMapping("/")
-    public Board doModify(@RequestBody BoardModifyDto boardModifyDto) {
+    @PostMapping("/modify/{bNo}")
+    public Board doModify(@PathVariable() Long bNo, @RequestBody BoardModifyDto boardModifyDto) {
         return boardService.modifyBoard(boardModifyDto);
     }
 
 
     @PostMapping("/delete/{bNo}")
-    public String  deleteBoard(@PathVariable Long bNo){ //@PathVariable 경로(?) 변수. {bNo}를 Long bNo 과 같은 것을 명시.
+    public String  deleteBoard(@PathVariable("bNo") Long bNo){ //@PathVariable 경로(?) 변수. {bNo}를 Long bNo 과 같은 것을 명시.
         boardService.deleteBoard(bNo);
         return "1 board is deleted.";
     }
