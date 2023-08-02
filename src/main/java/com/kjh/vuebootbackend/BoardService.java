@@ -4,6 +4,7 @@ import com.kjh.vuebootbackend.dto.BoardDeleteDto;
 import com.kjh.vuebootbackend.dto.BoardModifyDto;
 import com.kjh.vuebootbackend.dto.BoardWriteDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,8 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class BoardService {
+
+    //@Autowired --> 대신 @RequiredArgsConstructor + private final(추가)  BoardRepository ~~~; 사용
     private final BoardRepository boardRepository;
 
     public List<Board> searchBoardList() {
